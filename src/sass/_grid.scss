@@ -1,9 +1,37 @@
+@import 'variables', 'mixins';
+
 .container {
-  width: 1249px;
-  padding: 0 15px;
-  margin: 0 auto;
-  @media(max-width: 1200px) {
-    width: 100%;
-    padding: 0 24px;
+  max-width: $container;
+  margin: 48px auto;
+  padding: 48px 16px;
+
+  border: 1px solid #555;
+
+  // clearfix
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@function grid($col, $total: 12) {
+  @return ($col / $total) * 100%;
+}
+
+@for $i from 1 through 12 {
+  .grid-#{$i} {
+    width: calc(#{grid($i)} - #{$gutter});
+    margin: $gutter / 2;
+    background-color: #222;
+    border: 1px solid #333;
+    height: 72px;
+    float: left;
+
+    @include responsive(s) {
+      width: calc(100% - #{$gutter});
+      margin: $gutter / 2;
+      float: none;
+    }
   }
 }

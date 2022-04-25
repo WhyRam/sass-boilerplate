@@ -10,13 +10,26 @@
 }
 
 html {
-  font: 15px Arial, sans-serif;
+  font: 62.5% 'Mukta', sans-serif;
   box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  font: 1rem 'Mukta', sans-serif;
 }
 
 html,
 body {
   overflow-x: hidden;
+}
+
+body {
+  background-color: #0c0c0c;
+  color: #555;
+  font-size: 1rem;
 }
 
 button {
